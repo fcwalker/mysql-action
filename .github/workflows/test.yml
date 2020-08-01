@@ -29,11 +29,11 @@ jobs:
       with:
         mysql version: 5.7
         mysql database: test
-        mysql root password: ${{ secrets.DatabasePassword }}
+        mysql root password: '123456'
     - name: npm install, build, and test
       run: |
         npm install
         npm run lint
-        npm test -- --password=${{ secrets.DatabasePassword }}
+        npm test -- --password=123456
       env:
         CI: true
